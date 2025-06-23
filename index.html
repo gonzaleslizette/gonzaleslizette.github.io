@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lizette Gonzales | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f0f4fc;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #367bc4;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            background: transparent; /* Transparent to blend with the hero section */
+            color: white;
+        }
+
+        .nav-links {
+            display: flex; /* Ensures links are laid out horizontally */
+            gap: 20px; /* Space between links */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            margin-right: 30px; /* Adjust this value to increase/decrease space on the right */
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+        }
+
+        .menu-toggle {
+    display: none; /* Hidden for larger screens */
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-right: 40px; /* Adjust this value to increase/decrease space on the right */
+}
+
+
+            /* Responsive Styles for Smaller Screens */
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none; /* Hide horizontal layout */
+                    flex-direction: column; /* Stack items vertically */
+                    background-color: rgba(0, 0, 0, 0.8);
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    width: 100%;
+                    padding: 10px 0;
+                }
+
+                .nav-links.active {
+                    display: flex; /* Show vertical menu when active */
+                }
+
+                .menu-toggle {
+                    display: block; /* Show hamburger menu */
+                }
+            }
+
+
+/* Hero Section */
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 150px 50px 50px;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #4a90e2, #6eb5ff);
+                color: white;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .hero .content {
+                max-width: 50%;
+            }
+
+            .profile-img {
+                max-width: 350px;
+                border-radius: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Responsive Styling */
+            @media (max-width: 768px) {
+                .hero {
+                    flex-direction: column; /* Stack content vertically */
+                    text-align: center; /* Center align text */
+                    padding: 100px 20px; /* Reduce padding for smaller screens */
+                }
+
+                .hero .content {
+                    max-width: 100%; /* Allow text to take full width */
+                    margin-bottom: 20px; /* Add spacing below the text content */
+                }
+
+                .profile-img {
+                    max-width: 70%; /* Scale down the image */
+                }
+            }
+
+        .cta {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: white;
+            color: #4a90e2;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .cta:hover {
+            background-color: #367bc4;
+            color: white;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #4a90e2;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: #4a90e2;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        /* About me */
+        #about-me h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #0056b3;
+    text-align: center;
+        }
+
+        #about-me p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+
+#skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4a90e2;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 30px; /* Gap between rows and columns */
+    justify-items: center;
+}
+
+/* Skill Item */
+.skill-item {
+    display: flex;
+    gap: 15px; /* Space between icon and details */
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* Center items */
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill Icon */
+.skill-icon {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #367bc4, #4a90e2);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Skill Details */
+.skill-details {
+    flex: 1;
+}
+
+.skill-details p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.skill-details small {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background: #e6e6e6;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 10px; /* Consistent spacing between label and bar */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+    background: linear-gradient(90deg, #4a90e2, #367bc4);
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
+
+.view-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 30px; /* Wider padding for an oblong shape */
+    background: linear-gradient(135deg, #367bc4, #275a92);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px; /* Rounded corners for an oblong effect */
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.view-button:hover {
+    background: linear-gradient(135deg, #275a92, #367bc4);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.view-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+        /* Subsection Headings */
+        #certifications h3 {
+            margin-top: 50px;
+            color: #367bc4;
+            font-size: 1.8rem;
+            text-align: left;
+        }
+        #certifications h1 {
+            margin-top: 0px;
+            color: #000000;
+            font-size: 1rem;
+            text-align: left;
+        }
+        #certifications h1::after {
+            display: none;
+}
+
+        .certification {
+            display: inline-block;
+            width: 280px;
+            margin: 20px;
+            text-align: center;
+        }
+       /* Certification Images */
+        .certification img {
+            width: 300px; 
+            height: 250px; 
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .certification img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f0f4fc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+/* Contact Modal Styling */
+#contactModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px); /* Subtle blur effect */
+    overflow: auto;
+}
+
+#contactModal .modal-content {
+    margin: 10% auto;
+    padding: 30px;
+    max-width: 450px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fc);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-out;
+}
+
+#contactModal h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4a90e2;
+    position: relative;
+}
+
+#contactModal h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #367bc4;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#contactModal p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+    color: #333;
+    background: #f0f4fc;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #4a90e2;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+
+/* Close Button Styling */
+.modal .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.modal .close:hover {
+    color: #ffffff;
+    background: #ff0000;
+    border: 2px solid #f80f0f;
+    transform: scale(1.1);
+}
+
+.modal .close:active {
+    transform: scale(0.9);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+      <!-- Navigation -->
+  <nav>
+    <a href="#home">
+      <img src="logotourism.jpg" alt="" class="logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about-me">ABOUT</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#works">WORKS</a></li>
+      <li><a href="#certifications">CERTIFICATE</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Hello, I'm Lizette!</h1>
+            <p>I'm a Computer Engineering graduate from SLSU, passionate about creating innovative solutions and user-friendly systems.</p>
+            <a href="#" class="cta">Contact Me</a>
+        </div>
+        <img src="Liz.png" alt="Lizette's Profile" class="profile-img">
+    </section>
+
+    <!-- About Section -->
+<section id="about-me">
+    <h2>About Me</h2>
+        <p>
+        Hello! I’m <strong>Lizette Gonzales</strong>, a highly motivated Computer Engineering graduate with a passion for 
+        <strong>web development</strong>, <strong>design</strong>, and <strong>emerging technologies</strong>. 
+        I am skilled in creating <strong>responsive websites</strong> and <strong>dynamic web applications</strong> 
+        using <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, and 
+        <strong>backend frameworks</strong>.
+    </p>
+    <p>
+        I have hands-on experience with <strong>database management</strong> using <strong>MySQL</strong>, and I am 
+        proficient in deploying projects on <strong>hosting platforms</strong> like <strong>Hostinger</strong> and 
+        <strong>InfinityFree</strong>. My creativity is complemented by my proficiency in <strong>design tools</strong> 
+        like <strong>Canva</strong>, enabling me to craft visually compelling designs that enhance user engagement.
+    </p>
+    <p>
+        In addition to my technical skills, I bring personal attributes such as a 
+        <strong>strong work ethic</strong>, <strong>time management</strong>, the ability to <strong>work independently</strong> 
+        or as part of a <strong>team</strong>, and an <strong>eagerness to learn</strong>. I am committed to leveraging 
+        these skills to deliver high-quality and innovative solutions in every project I undertake.
+    </p>
+</section>
+
+<!-- Skills Section -->
+    <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <div class="skill-item">
+            <div class="skill-icon">WEB</div>
+            <div class="skill-details">
+                <p>Web Development</p>
+                <small>HTML, CSS, JavaScript and PHP</small>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon">PROG</div>
+            <div class="skill-details">
+                <p>PROGRAMMING Language</p>
+                <small>Java, C++, Python</small>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 40%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon">DB</div>
+            <div class="skill-details">
+                <p>Database Management</p>
+                <small>MYSQL and Firebase</small>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon">TOOLS</div>
+            <div class="skill-details">
+                <p>Design Tools</p>
+                <small>Canva</small>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon">MS</div>
+            <div class="skill-details">
+                <p>Microsoft Office</p>
+                <small>MS Word, Powerpoint and Excel</small>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-item">
+            <div class="skill-icon">WEB</div>
+            <div class="skill-details">
+                <p>Web Hosting and Deployment</p>
+                <small>Hostinger and InfinityFree</small>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Works Section -->
+<section id="works">
+    <h2>My Projects</h2>
+    <div class="certification">
+        <img src="images/project1.png" alt="Project 1" onclick="openModal(this)">
+        <h1>Unisan Attraction Website</h1>
+        <p>An informative website showcasing the beautiful tourist attractions, culture, and history of Unisan, Quezon. The platform highlights the rich heritage of the town and promotes tourism.</p>
+        <a href="https://unisantourism.rf.gd/?i=1" target="_blank" class="view-button">View Project</a>
+    </div>
+    <div class="certification">
+        <img src="images/project2.png" alt="Project 2" onclick="openModal(this)">
+        <h1>Boat Monitoring Website</h1>
+        <p>A real-time passenger boat tracking system designed for the Atimonan-Perez route. It ensures the safety and convenience of passengers by providing live updates on boat locations.</p>
+        <a href="https://atimonantoperezboatmonitoring.rf.gd/index.php" target="_blank" class="view-button">View Project</a>
+    </div>
+</section>
+
+
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2>Certifications</h2>
+
+        <!-- Online Courses -->
+        <h3>Online Courses</h3>
+        <div class="certification">
+            <img src="images/certi3.jpg" alt="Google AI Essentials" onclick="openModal(this)">
+            <h1>Google AI Essentials</h1>
+            <p>A foundational course introducing key concepts in artificial intelligence and its applications in solving real-world problems.</p>
+        </div>
+        <div class="certification">
+            <img src="images/certi1.jpg" alt="Introduction to Cybersecurity" onclick="openModal(this)">
+            <h1>Introduction to Cybersecurity</h1>
+            <p>A comprehensive course on safeguarding digital systems, understanding cyber threats, and implementing security measures.</p>
+        </div>
+        <div class="certification">
+            <img src="images/certi2.jpg" alt="Computer Hardware Basic" onclick="openModal(this)">
+            <h1>Computer Hardware Basic</h1>
+            <p>An essential course covering the fundamentals of computer hardware, its components, and their functions.</p>
+        </div>
+
+
+        <!-- Seminars & Trainings -->
+        <h3>Seminars & Trainings</h3>
+        <div class="certification">
+            <img src="images/seminar1.jpg" alt="IoT Seminar" onclick="openModal(this)">
+            <h1>Initiate: Introduction to Web and System Administration</h1>
+            <p>A comprehensive introduction to web and system administration, focusing on foundational knowledge and practical applications.</p>
+        </div>
+        <div class="certification">
+            <img src="images/seminar2.jpg" alt="System Mastery Workshop" onclick="openModal(this)">
+            <h1>Boot, Break, Fix, Repeat <br> The Art of Mastering Computer Systems</h1>
+            <p>A deep dive into troubleshooting, repairing, and optimizing computer systems for enhanced performance.</p>
+        </div>
+        <div class="certification">
+            <img src="images/seminar3.jpg" alt="ICT Industry Seminar" onclick="openModal(this)">
+            <h1>The Digital Workforce: Thriving in the ICT Industry as a Computer Engineer</h1>
+            <p>An exploration of career opportunities, challenges, and advancements for computer engineers in the ICT industry.</p>
+        </div>
+        <div class="certification">
+            <img src="images/seminar4.jpg" alt="3D Printing Workshop" onclick="openModal(this)">
+            <h1>From Concept to Creation</h1>
+            <p>An immersive workshop on utilizing 3D printing technology to bring innovative ideas to life.</p>
+        </div>
+        <div class="certification">
+            <img src="images/seminar5.jpg" alt="Threat Analysis Seminar" onclick="openModal(this)">
+            <h1>Behind the Screen: A Threat Analyst's Path to Malware Defense</h1>
+            <p>An insightful seminar on understanding and countering malware threats with effective defense strategies.</p>
+        </div>
+        <div class="certification">
+            <img src="images/seminar6.jpg" alt="Career Development Workshop" onclick="openModal(this)">
+            <h1>Engineering Visionaries: Shaping One's Future Through Career Development</h1>
+            <p>A motivational session on planning and achieving long-term career goals as an engineer.</p>
+        </div>
+        <div class="certification">
+            <img src="images/dict1.jpg" alt="Portfolio Workshop" onclick="openModal(this)">
+            <h1>Boost Your Portfolio Like a Pro: Powerful Tools for Education</h1>
+            <p>An engaging workshop on leveraging advanced tools to create a standout educational portfolio.</p>
+        </div>
+        <div class="certification">
+            <img src="images/dict2.jpg" alt="Cybersecurity Awareness Seminar" onclick="openModal(this)">
+            <h1>Cybersecurity Awareness</h1>
+            <p>A crucial seminar on protecting digital assets and understanding the fundamentals of cybersecurity.</p>
+        </div>
+
+</section>
+
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+    <span class="close" onclick="closeContactModal()">&times;</span>
+    <div class="modal-content">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me on any of these platforms:</p>
+        <div class="contact-list">
+            <div class="contact-item">
+                <i class="fa-brands fa-telegram"></i>
+                <span>@Liz_gnzls</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-facebook"></i>
+                <span>https://www.facebook.com/lizette.gonzales.71</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-instagram"></i>
+                <span>@lizette_gnzls</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>lizetteesquillogonzales@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+63 910 769 6251</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" id="modalImageContainer">
+            <img id="modalImage" src="" alt="Zoomed Image">
+        </div>
+    </div>
+
+    <script>
+    // Select the menu toggle button and navigation links
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+// Add an event listener to the toggle button
+menuToggle.addEventListener('click', () => {
+    // Toggle the 'active' class on the navigation links
+    navLinks.classList.toggle('active');
+});
+
+        // Open Modal
+        function openModal(img) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        // Close Modal
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Close Modal on Outside Click
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+// Open Contact Modal
+document.querySelector('.cta').addEventListener('click', () => {
+    const contactModal = document.getElementById("contactModal");
+    contactModal.style.display = "block";
+});
+
+// Close Contact Modal
+function closeContactModal() {
+    const contactModal = document.getElementById("contactModal");
+    contactModal.style.display = "none";
+}
+
+// Close Contact Modal on Outside Click
+window.onclick = function(event) {
+    const contactModal = document.getElementById("contactModal");
+    if (event.target === contactModal) {
+        contactModal.style.display = "none";
+    }
+};
+
+
+    </script>
+
+</body>
+</html>
