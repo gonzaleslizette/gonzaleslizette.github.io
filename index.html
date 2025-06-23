@@ -333,26 +333,32 @@
             display: none;
 }
 
-        .certification {
-            display: inline-block;
-            width: 280px;
-            margin: 20px;
-            text-align: center;
-        }
-       /* Certification Images */
-        .certification img {
-            width: 300px; 
-            height: 250px; 
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        }
+/* Certification Images */
+.certification img {
+    width: 100%; /* Full width of its container */
+    height: 200px; /* Fixed height to ensure uniformity */
+    object-fit: cover; /* Ensures image fits nicely without distortion */
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
-        .certification img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-        }
+.certification img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Certification Containers */
+.certification {
+    display: inline-block;
+    width: 300px; /* Consistent width for all items */
+    height: auto;
+    margin: 20px;
+    text-align: center;
+    vertical-align: top; /* Align items vertically */
+}
+
 
         /* Modal Styles */
         .modal {
@@ -515,6 +521,57 @@
         transform: scale(1);
     }
 }
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    body {
+        text-align: center; /* Center-align text content */
+    }
+
+    .hero {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Center-align text */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+    }
+
+    .hero .content {
+        max-width: 100%; /* Allow text to take full width */
+        margin-bottom: 20px; /* Add spacing below the text content */
+    }
+
+    .profile-img {
+        max-width: 70%; /* Scale down the image */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        justify-items: center; /* Center items in the grid */
+    }
+
+    .certification {
+        margin: 20px auto; /* Center certifications */
+    }
+
+    .certification img {
+        margin: 0 auto; /* Center the image within the parent */
+    }
+
+    #contactModal .modal-content {
+        margin: 15% auto; /* Center modal content vertically */
+        text-align: center; /* Center-align text */
+    }
+
+    .contact-list {
+        align-items: center; /* Center the contact items */
+    }
+
+    .contact-item {
+        margin: 0 auto; /* Center each contact item horizontally */
+    }
+}
+
 
 
 
