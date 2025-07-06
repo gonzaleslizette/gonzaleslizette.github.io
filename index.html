@@ -478,8 +478,15 @@
 @media (max-width: 600px) {
     body {
         text-align: center; /* Center-align text content */
+        background-color: #e5efff; /* Slightly lighter pastel blue for smaller screens */
+    }
+    section {
+        background-color: #ffffff; /* Use a clean white or consistent pastel background */
     }
 
+    section:nth-child(even) {
+        background-color: #f2f6ff; /* A very soft variation to preserve alternating effect */
+    }
     .nav-links {
     display: none; /* Hide horizontal layout */
     flex-direction: column; /* Stack items vertically */
@@ -515,6 +522,15 @@
     .profile-img {
         max-width: 70%; /* Scale down the image */
         margin: 0 auto; /* Center the image horizontally */
+    }
+
+    .skills, .works, .certifications {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Center-align text */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        padding: 100px 20px; /* Reduce padding for smaller screens */
     }
 
     .skills-grid {
@@ -565,10 +581,6 @@
         right: 15px;
     }
 }
-
-
-
-
     </style>
 </head>
 <body>
