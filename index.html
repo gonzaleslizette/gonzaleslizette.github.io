@@ -394,7 +394,7 @@ h2 {
       <img src="logotourism.jpg" alt="" class="logo">
     </a>
     <ul class="nav-links">
-      <li><a href="#home">HOME</a></li>
+      <li><a href="#">HOME</a></li>
       <li><a href="#about-me">ABOUT</a></li>
       <li><a href="#skills">SKILLS</a></li>
       <li><a href="#works">WORKS</a></li>
@@ -645,61 +645,65 @@ h2 {
         </div>
     </div>
 
-    <script>
-    // Select the menu toggle button and navigation links
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+<script>
+  // Select the menu toggle button and navigation links
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-// Add an event listener to the toggle button
-menuToggle.addEventListener('click', () => {
-    // Toggle the 'active' class on the navigation links
+  // Toggle nav menu on hamburger click
+  menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-});
+  });
 
-        // Open Modal
-        function openModal(img) {
-            const modal = document.getElementById("myModal");
-            const modalImg = document.getElementById("modalImage");
-            modal.style.display = "block";
-            modalImg.src = img.src;
-        }
+  // ✅ Close nav menu on link click (mobile)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
 
-        // Close Modal
-        function closeModal() {
-            const modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
+  // Open Modal
+  function openModal(img) {
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+  }
 
-        // Close Modal on Outside Click
-        window.onclick = function(event) {
-            const modal = document.getElementById("myModal");
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        };
+  // Close Modal
+  function closeModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
 
-// Open Contact Modal
-document.querySelector('.cta').addEventListener('click', () => {
+  // Close Modal on Outside Click
+  window.onclick = function(event) {
+    const modal = document.getElementById("myModal");
+    const contactModal = document.getElementById("contactModal");
+
+    // Close image modal
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+
+    // Close contact modal
+    if (event.target === contactModal) {
+      contactModal.style.display = "none";
+    }
+  };
+
+  // Open Contact Modal
+  document.querySelector('.cta').addEventListener('click', () => {
     const contactModal = document.getElementById("contactModal");
     contactModal.style.display = "block";
-});
+  });
 
-// Close Contact Modal
-function closeContactModal() {
+  // Close Contact Modal
+  function closeContactModal() {
     const contactModal = document.getElementById("contactModal");
     contactModal.style.display = "none";
-}
-
-// Close Contact Modal on Outside Click
-window.onclick = function(event) {
-    const contactModal = document.getElementById("contactModal");
-    if (event.target === contactModal) {
-        contactModal.style.display = "none";
-    }
-};
-
-
-    </script>
+  }
+</script>
 
 </body>
 </html>
