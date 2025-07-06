@@ -75,29 +75,6 @@
 }
 
 
-            /* Responsive Styles for Smaller Screens */
-            @media (max-width: 768px) {
-                .nav-links {
-                    display: none; /* Hide horizontal layout */
-                    flex-direction: column; /* Stack items vertically */
-                    background-color: rgba(0, 0, 0, 0.8);
-                    position: absolute;
-                    top: 70px;
-                    left: 0;
-                    width: 100%;
-                    padding: 10px 0;
-                }
-
-                .nav-links.active {
-                    display: flex; /* Show vertical menu when active */
-                }
-
-                .menu-toggle {
-                    display: block; /* Show hamburger menu */
-                }
-            }
-
-
 /* Hero Section */
             .hero {
                 display: flex;
@@ -119,24 +96,6 @@
                 max-width: 350px;
                 border-radius: 20px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
-
-            /* Responsive Styling */
-            @media (max-width: 768px) {
-                .hero {
-                    flex-direction: column; /* Stack content vertically */
-                    text-align: center; /* Center align text */
-                    padding: 100px 20px; /* Reduce padding for smaller screens */
-                }
-
-                .hero .content {
-                    max-width: 100%; /* Allow text to take full width */
-                    margin-bottom: 20px; /* Add spacing below the text content */
-                }
-
-                .profile-img {
-                    max-width: 70%; /* Scale down the image */
-                }
             }
 
         .cta {
@@ -278,13 +237,6 @@
     height: 100%;
     border-radius: 6px;
     transition: width 0.5s ease;
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-    }
 }
 
 
@@ -528,11 +480,31 @@
         text-align: center; /* Center-align text content */
     }
 
+    .nav-links {
+    display: none; /* Hide horizontal layout */
+    flex-direction: column; /* Stack items vertically */
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+                }
+
+    .nav-links.active {
+    display: flex; /* Show vertical menu when active */
+                }
+
+    .menu-toggle {
+    display: block; /* Show hamburger menu */
+                }
+
     .hero {
         flex-direction: column; /* Stack content vertically */
         text-align: center; /* Center-align text */
         align-items: center; /* Center items horizontally */
         justify-content: center; /* Center items vertically */
+        padding: 100px 20px; /* Reduce padding for smaller screens */
     }
 
     .hero .content {
@@ -823,7 +795,7 @@
             </div>
             <div class="contact-item">
                 <i class="fa-brands fa-instagram"></i>
-                <span>lizette_gnzls</span>
+                <span>@lizette_gnzls</span>
             </div>
             <div class="contact-item">
                 <i class="fa-solid fa-envelope"></i>
