@@ -53,12 +53,12 @@ nav {
   transition: 0.3s;
 }
 .nav-links li a:hover {
-  color: #00d1ff;
+  color: #aabaff;
 }
 nav:hover {
   background-color: #2a2a2a;
   transform: scale(1.005);
-  box-shadow: 0 4px 20px rgba(0, 209, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(170, 186, 255, 0.2);
 }
 .menu-toggle {
   display: none;
@@ -84,7 +84,7 @@ nav:hover {
 }
 .hero h1 {
   font-size: 2.5rem;
-  color: #00d1ff;
+  color: #aabaff;
 }
 .hero p {
   margin: 1rem 0;
@@ -110,7 +110,7 @@ nav:hover {
   object-fit: cover;
   animation: slideUp 1s ease-in-out;
   margin: 0 auto;
-  box-shadow: 0 0 25px rgba(0, 209, 255, 0.5); /* electric blue glow */
+  box-shadow: 0 0 25px rgba(170, 186, 255, 0.5);
 }
 
 /* Section Structure */
@@ -122,7 +122,7 @@ section {
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #00d1ff;
+  color: #aabaff;
 }
 
 /* About Me */
@@ -131,9 +131,8 @@ h2 {
   color: #cccccc;
 }
 #about-me strong {
-  color: #00d1ff; /* Electric blue */
+  color: #aabaff;
 }
-
 
 /* Skills Grid */
 .skills-grid {
@@ -153,7 +152,7 @@ h2 {
 }
 .skill-icon {
   font-weight: bold;
-  color: #00d1ff;
+  color: #aabaff;
 }
 .progress-bar {
   background-color: #333;
@@ -162,7 +161,7 @@ h2 {
   margin-top: 0.5rem;
 }
 .progress {
-  background: linear-gradient(to right, #00d1ff, #00ffaa);
+  background: linear-gradient(to right, #aabaff, #bde0fe);
   height: 100%;
   border-radius: 5px;
 }
@@ -189,6 +188,7 @@ h2 {
 .certification h1 {
   font-size: 1.25rem;
   margin: 0.5rem 0;
+  color: #aabaff;
 }
 .certification p {
   color: #cccccc;
@@ -199,7 +199,6 @@ h2 {
   gap: 2rem;
   margin-top: 2rem;
 }
-
 
 /* Projects */
 .project {
@@ -223,19 +222,17 @@ h2 {
 .project h1 {
   font-size: 1.25rem;
   margin: 0.5rem 0;
+  color: #aabaff;
 }
 .project p {
   color: #cccccc;
 }
-
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
-
-
 
 /* View Button */
 .view-button {
@@ -250,7 +247,7 @@ h2 {
 }
 .view-button:hover {
   background-color: #00bfa6;
-  box-shadow: 0 0 10px #00bfa6;
+  box-shadow: 0 0 10px #aabaff;
 }
 
 /* Modal Background */
@@ -275,7 +272,7 @@ h2 {
   border-radius: 10px;
   width: 90%;
   max-width: 600px;
-  box-shadow: 0 0 15px #00d1ff;
+  box-shadow: 0 0 15px #aabaff;
   animation: bounceIn 0.6s ease;
 }
 
@@ -333,8 +330,6 @@ h2 {
   to   { opacity: 1; }
 }
 
-
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero {
@@ -358,17 +353,16 @@ h2 {
     display: flex;
   }
   .nav-links li a {
-  color: #f0f0f0;
-  text-decoration: none;
-  padding: 1rem;
-  display: block;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #00d1ff;
-  background-color: #2a2a2a; /* subtle hover background */
-}
+    color: #f0f0f0;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .nav-links li a:hover {
+    color: #aabaff;
+    background-color: #2a2a2a;
+  }
   .menu-toggle {
     display: block;
   }
@@ -384,6 +378,7 @@ h2 {
     font-size: 0.95rem;
   }
 }
+
 
     </style>
 </head>
